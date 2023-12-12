@@ -56,7 +56,7 @@ function isDigit(str: string): boolean {
     return /^\d$/.test(str);
 }
 
-const input = readFileSync('input', 'utf-8');
+const input = readFileSync('input.txt', 'utf-8');
 
 const ans = input.split('\n')
     .map((str) => calibration(str))
