@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 
 const LIMITATION = { red: 12, green: 13, blue: 14 };
 
-type Color = keyof typeof LIMITATION;
+export type Color = keyof typeof LIMITATION;
 
 function cubeConundrum() {
   const input = readFileSync("input.txt", "utf-8");
@@ -42,7 +42,7 @@ function cubeConundrum() {
   return sum;
 }
 
-type GameRecord = {
+export type GameRecord = {
   id: number;
   records: Array<{
     red?: number;
@@ -51,7 +51,7 @@ type GameRecord = {
   }>;
 };
 
-function parseGameRecordFromString(str: string): GameRecord {
+export function parseGameRecordFromString(str: string): GameRecord {
   const [gameMetaData, recordData] = str.split(":");
   const gameRecord: GameRecord = {
     id: getGameId(gameMetaData),
@@ -78,9 +78,9 @@ function getGameId(str: string): number {
   return parseInt(digits[0]);
 }
 
-function isColor(key: string): key is Color {
+export function isColor(key: string): key is Color {
   return key === "red" || key === "green" || key === "blue";
 }
 
-const ans = cubeConundrum();
-console.log(ans);
+// const ans = cubeConundrum();
+// console.log(ans);

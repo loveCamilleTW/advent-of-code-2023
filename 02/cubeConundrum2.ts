@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { parseGameRecordFromString, isColor } from "../03/cubeConundrum";
+import { parseGameRecordFromString, isColor } from "./cubeConundrum";
 
 function cubeConundrum2() {
   const input = readFileSync("input.txt", "utf-8");
